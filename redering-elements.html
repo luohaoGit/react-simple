@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Hello World</title>
+	<script src="https://unpkg.com/react@latest/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+    /**
+	 *	1.React Elements 是组成react应用的最小单位，它是一个普通对象，并且创建消耗很小的性能，React通过监控虚拟DOM来更新DOM
+	 *	2.这里因为是初学阶段，所以通过ReactDOM.render()来重新渲染UI
+	 *	3.React只更改DOM被修改的地方，这样在复杂的UI下，重新渲染的效率会很高（diff算法）
+	 *	4.JSX 可以允许把 HTML 类似的语法转换为轻量级的 JavaScript 对象，React把这些对象render到UI
+     */
+    function tick() {
+        const element = (
+				<div>
+					<h1>Hello, world!</h1>
+					<h2>It is {new Date().toLocaleTimeString()}.</h2>
+				</div>
+        );
+        ReactDOM.render(
+            element,
+            document.getElementById('root')
+        );
+    }
+
+    setInterval(tick, 1000);
+
+</script>
+</body>
+</html>

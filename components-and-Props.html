@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Hello World</title>
+	<script src="https://unpkg.com/react@latest/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+    /**
+	 *	1.Component把UI切割成一个个独立的、可重用的单位；
+	 *	2.Component其实就是一个简单的JavaScript方法，接收props参数，返回React Element,所以可以说Component是functional的
+	 *	3.Component也可以组合使用，Component必须返回一个只有一个根元素的元素，下面的例子在三个Welcome外加了一个DIV
+     */
+
+    function Welcome(props) {
+        return <h1>Hello, {props.name}</h1>;
+    }
+
+/*    class Welcome extends React.Component {
+        render() {
+            return <h1>Hello, {this.props.name}</h1>;
+        }
+    }*/
+
+    function App() {
+        return (
+			<div>
+				<Welcome name="Sara" />
+				<Welcome name="Cahal" />
+				<Welcome name="Edite" />
+			</div>
+        );
+    }
+
+    ReactDOM.render(
+			<App />,
+        document.getElementById('root')
+    );
+
+
+</script>
+</body>
+</html>
